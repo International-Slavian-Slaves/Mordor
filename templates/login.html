@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        {{ form.hidden_tag() }}
+        <p>{{ form.rf_id.label() }} {{ form.rf_id() }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    <a href="{{ url_for('views.index') }}">Вернуться на главную страницу</a><br>
+</body>
+</html>
