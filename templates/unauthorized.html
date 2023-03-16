@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    У вас нет прав доступа. <a href="{{ url_for("admin.login_admin") }}">Войти как админимстратор</a>?
+    <header class="header">
+        <p>
+          <img src="./static/images/logo.png" alt="" class="logo">
+        </p>
+        <div class="buttons">
+          <a href="{{ url_for('views.index') }}" class="button">
+              Вернуться на главную страницу
+          </a>
+      </div>
+    </header>
+    <div class="error">
+         У вас нет прав доступа. <a href="{{ url_for("admin.login_admin") }}">Войти как админимстратор</a>?
+    </div>
 </body>
 </html>

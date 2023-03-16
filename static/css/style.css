@@ -200,3 +200,10 @@ div.text-input{
     align-items: center;
     margin: 30px 50px;
 }
+
+div.error{
+    text-decoration: none;
+
+    color: black;
+    margin: 30px 50px;
+}
