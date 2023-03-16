@@ -3,16 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <header class="header">
+      <p>
+          <img src="./static/images/logo.png" alt="" class="logo">
+      </p>
+      <div class="buttons">
+          <a href="{{ url_for('views.index') }}" class="button">
+              Вернуться на главную страницу
+          </a>
+      </div>
+    </header>
     <form action="/registration" method="post">
         {{ form.hidden_tag() }}
-        <p>{{ form.l_name.label() }} {{ form.l_name() }}</p>
-        <p>{{ form.f_name.label() }} {{ form.f_name() }}</p>
-        <p>{{ form.m_name.label() }} {{ form.m_name() }}</p>
-        <p>{{ form.rf_id.label() }} {{ form.rf_id() }}</p>
-        <p>{{ form.submit() }}</p>
+        <div class="text-input">
+            {{ form.l_name.label() }} {{ form.l_name(class_="text") }}
+        </div>
+        <div class="text-input">
+            {{ form.f_name.label() }} {{ form.f_name(class_="text") }}
+        </div>
+        <div class="text-input">
+            {{ form.m_name.label() }} {{ form.m_name(class_="text") }}
+        </div>
+        <div class="text-input">
+            {{ form.rf_id.label() }} {{ form.rf_id(class_="text") }}
+        </div>
+        {{ form.submit(class_="register_btn") }}
     </form>
-    <a href="{{ url_for('views.index') }}">Вернуться на главную страницу</a><br>
 </body>
 </html>

@@ -126,6 +126,30 @@ input.btn:hover{
     background-color: #dfb2ff;
 }
 
+input.register_btn{
+    background-color: #EADAFF;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    width: 200px;
+    height: 30px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 0 10px;
+    margin: 0 0 50px 50px;
+}
+
+input.register_btn:hover{
+    background-color: #dfb2ff;
+}
+
 div.passes:last-child{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
@@ -149,3 +173,30 @@ div.passes p:last-child{
     margin-right: 20px;
 }
 
+input.text{
+    background-color: #BF8CFF;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    width: 200px;
+    height: 25px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+
+div.text-input{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 50px;
+}
