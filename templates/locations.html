@@ -3,13 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+ <header class="header">
+      <p>
+          <img src="./static/images/logo.png" alt="" class="logo">
+      </p>
+      <div class="buttons">
+          <a href="{{ url_for('views.index') }}" class="button">
+              Вернуться на главную страницу
+          </a>
+      </div>
+  </header>
+ <div class ="number-input">Местонахождение сотрудников:</div>
     {% for location in location_data %}
         {% if location[2] != "Администратор" %}
-        <p>{{ location[1] }} {{ location[2] }}: {{ location[5] }}</p>
+            <div class="passes">
+                <p>{{ location[1] }} {{ location[2] }}</p>
+                <p>{{ location[5] }}</p>
+            </div>
         {% endif %}
     {% endfor %}
-    <a href="{{ url_for('views.index') }}">Вернуться на главную страницу</a><br>
 </body>
 </html>
