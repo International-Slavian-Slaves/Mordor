@@ -6,15 +6,20 @@
   </head>
   <body>
   <header class="header">
-      <a href="{{ url_for('views.locate_users') }}" class="button">
-          Посмотреть местонахождение сотрудников
-      </a>
-      <a href="{{ url_for('views.registration') }}" class="button">
-          Зарегистрировать сотрудника
-      </a>
-      <a href="{{ url_for('admin.get_month_time') }}" class="button">
-          Посмотреть количество часов проведнных сотрудником на работе
-      </a>
+      <p>
+          <img src="./static/images/logo.png" alt="" class="logo">
+      </p>
+      <div class="buttons">
+          <a href="{{ url_for('views.locate_users') }}" class="button">
+              Cтатус сотрудников
+          </a>
+          <a href="{{ url_for('views.registration') }}" class="button">
+              Зарегистрировать
+          </a>
+          <a href="{{ url_for('admin.get_month_time') }}" class="button">
+              Учет часов
+          </a>
+      </div>
   </header>
     {% for message in get_flashed_messages() %}
     <div>{{ message }}</div>

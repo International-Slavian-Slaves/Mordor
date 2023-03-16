@@ -14,9 +14,11 @@ body {
     flex-direction: column;
 }
 a.button{
+    font-size: 20px;
+    color: black;
     background-color: #BF8CFF;
-    width: 300px;
-    height: 60px;
+    width: 200px;
+    height: 50px;
     border: 1px solid black;
     box-shadow: 1px 1px 5px black;
     border-radius: 10px;
@@ -27,6 +29,7 @@ a.button{
     align-items: center;
     text-align: center;
     margin: auto 20px;
+    padding: 5px 10px;
 }
 a.button:visited{
     color: black;
@@ -37,17 +40,28 @@ a.button:hover{
 }
 
 a.button:last-child{
-    width: 350px;
+    width: 200px;
 }
 
 header.header{
     background-color: #D0AAFF;
-    height: 100px;
+    height: 90px;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     border-bottom: 3px solid #7A55A8;
+}
+
+div.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+img.logo{
+    height: 70px;
+    margin: 10px 50px;
 }
 
 div.number-input{
@@ -55,7 +69,7 @@ div.number-input{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 50px;
+    margin: 40px 50px;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -70,6 +84,9 @@ input[type=number] {
 
 input.number{
     background-color: #BF8CFF;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
     width: 150px;
     height: 30px;
     border: 1px solid black;
@@ -87,6 +104,9 @@ input.number{
 
 input.btn{
     background-color: #EADAFF;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     width: 150px;
     height: 30px;
     border: 1px solid black;
@@ -98,9 +118,12 @@ input.btn{
     justify-content: center;
     align-items: center;
     text-align: left;
-    margin: 0 10px;
     padding: 0 10px;
-    margin: 50px;
+    margin: 0 0 50px 50px;
+}
+
+input.btn:hover{
+    background-color: #dfb2ff;
 }
 
 div.passes:last-child{
