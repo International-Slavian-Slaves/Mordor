@@ -8,7 +8,9 @@
   <body>
   <header class="header">
       <p>
-          <img src="./static/images/logo.png" alt="" class="logo">
+          <a href="{{ url_for('views.index') }}">
+              <img src="./static/images/logo.png" alt="" class="logo">
+          </a>
       </p>
       <div class="buttons">
           <a href="{{ url_for('views.locate_users') }}" class="button">
