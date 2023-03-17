@@ -24,7 +24,7 @@
         {{ form.submit(class_="btn") }}
     </form>
     {% for message in get_flashed_messages() %}
-    <p>{{ message }}</p>
+    <div class="result">{{ message }}</div>
     {% endfor %}
 </body>
 </html>

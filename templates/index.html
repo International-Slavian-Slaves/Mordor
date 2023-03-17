@@ -25,7 +25,7 @@
       </div>
   </header>
     {% for message in get_flashed_messages() %}
-    <div>{{ message }}</div>
+    <div class="login-flash">{{ message }}</div>
     {% endfor %}
     <form action="/index" method="post">
         {{ form.hidden_tag() }}

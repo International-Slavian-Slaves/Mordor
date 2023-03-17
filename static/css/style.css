@@ -237,3 +237,9 @@ div.result{
     margin: 0 50px;
 }
 
+div.login-flash{
+    background-color: #c1ff9a;
+    display: flex;
+    padding: 0 50px;
+}
+
