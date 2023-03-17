@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <p>{{ msg }}</p>
-    <img
+    <header class="header">
+      <p>
+          <a href="{{ url_for('views.index') }}">
+              <img src="./static/images/logo.png" alt="" class="logo">
+          </a>
+      </p>
+    </header>
+    <div class="made-fun">{{ msg }}</div>
+    <img class="made-fun"
     {% if result %}
         src="static/images/dropped.jpg"
     {% else %}

@@ -243,3 +243,13 @@ div.login-flash{
     padding: 0 50px;
 }
 
+div.made-fun{
+    font-family: 'Comic Sans MS', SansSerif;
+    color: black;
+    margin: 0 50px;
+}
+
+img.made-fun{
+    width: 500px;
+}
+
