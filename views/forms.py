@@ -19,7 +19,7 @@ class LimitForm(FlaskForm):
 
 class RF_IDForm(FlaskForm):
     rf_id = StringField("RF_ID сотрудника: ", validators=[DataRequired(), Length(min=2, max=20)], default="")
-    submit = SubmitField("Вывести количество рабочих часов за месяц")
+    submit = SubmitField("Учет часов за месяц")
 
 
 class AdminForm(FlaskForm):

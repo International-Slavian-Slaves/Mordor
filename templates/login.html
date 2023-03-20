@@ -2,17 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.ico') }}" type="image/x-icon">
 </head>
 <body>
+    <header class="header">
+      <p>
+          <a href="{{ url_for('views.index') }}">
+              <img src="./static/images/logo.png" alt="" class="logo">
+          </a>
+      </p>
+      <div class="buttons">
+          <a href="{{ url_for('views.index') }}" class="button">
+              Вернуться на главную страницу
+          </a>
+      </div>
+    </header>
     <form action="/login" method="post">
         {{ form.hidden_tag() }}
-        <p>{{ form.rf_id.label() }} {{ form.rf_id() }}</p>
-        <p>{{ form.submit() }}</p>
+        <div class="text-input">{{ form.rf_id.label() }} {{ form.rf_id(class_="text") }}</div>
+        {{ form.submit(class_="btn") }}
     </form>
     {% for message in get_flashed_messages() %}
-    <p>{{ message }}</p>
+    <div class="result">{{ message }}</div>
     {% endfor %}
-    <a href="{{ url_for('views.index') }}">Вернуться на главную страницу</a><br>
 </body>
 </html>

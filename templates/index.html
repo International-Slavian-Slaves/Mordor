@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Title</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <meta charset="UTF-8">
+      <title>Мордор</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.ico') }}" type="image/x-icon">
   </head>
   <body>
   <header class="header">
-      <a href="{{ url_for('views.locate_users') }}" class="button">
-          Посмотреть местонахождение сотрудников
-      </a>
-      <a href="{{ url_for('views.registration') }}" class="button">
-          Зарегистрировать сотрудника
-      </a>
-      <a href="{{ url_for('admin.get_month_time') }}" class="button">
-          Посмотреть количество часов проведнных сотрудником на работе
-      </a>
+      <p>
+          <a href="{{ url_for('views.index') }}">
+              <img src="./static/images/logo.png" alt="" class="logo">
+          </a>
+      </p>
+      <div class="buttons">
+          <a href="{{ url_for('views.locate_users') }}" class="button">
+              Cтатус сотрудников
+          </a>
+          <a href="{{ url_for('views.registration') }}" class="button">
+              Зарегистрировать
+          </a>
+          <a href="{{ url_for('admin.get_month_time') }}" class="button">
+              Учет часов
+          </a>
+      </div>
   </header>
     {% for message in get_flashed_messages() %}
-    <div>{{ message }}</div>
+    <div class="login-flash">{{ message }}</div>
     {% endfor %}
     <form action="/index" method="post">
         {{ form.hidden_tag() }}
