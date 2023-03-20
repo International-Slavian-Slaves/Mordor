@@ -1,2 +1,5 @@
+from models.hardware_queries import check_registration
+
+
 def is_registered(rf_id):
-    return str(rf_id == "30:30:30:30")
+    return check_registration(rf_id)
