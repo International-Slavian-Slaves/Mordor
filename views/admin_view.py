@@ -13,7 +13,7 @@ def login_admin():
     if request.method == "POST":
         user = check_admin(request.form['rf_id'])
         print(user)
-        if user and user[0] == "1111":
+        if user and user[0] == "11:11:11:11":
             userlogin = AdminLogin().create(user)
             login_user(userlogin)
             flash("Вы успешно авторизовались")
