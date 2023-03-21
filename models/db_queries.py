@@ -8,14 +8,13 @@ engine = db.create_engine("sqlite:///SQLite.db")
 
 
 def make_dict(request_data):
-    with engine.connect() as connection:
-        edited_data = ImmutableMultiDict.to_dict(request_data)
-        data_dict = dict()
-        data_dict['RF_ID'] = edited_data['rf_id']
-        data_dict['Per_Fname'] = edited_data['f_name']
-        data_dict['Per_Mname'] = edited_data['m_name']
-        data_dict['Per_Lname'] = edited_data['l_name']
-        return data_dict
+    edited_data = ImmutableMultiDict.to_dict(request_data)
+    data_dict = dict()
+    data_dict['RF_ID'] = edited_data['rf_id']
+    data_dict['Per_Fname'] = edited_data['f_name']
+    data_dict['Per_Mname'] = edited_data['m_name']
+    data_dict['Per_Lname'] = edited_data['l_name']
+    return data_dict
 
 
 def insert_person_data(request_data):
