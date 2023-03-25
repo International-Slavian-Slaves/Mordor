@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:latest
 
 # Set environment variables
 ENV FLASK_APP=app.py
@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 8001
 
 # Run the application
-CMD ["flask", "run", "--host=0.0.0.0", "--port=80"]
+CMD ["python", "backend.py"]
