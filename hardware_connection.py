@@ -12,7 +12,3 @@ def on_request():
     if response:
         insert_data(rf_id=rf_id)
     return response
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8002)
