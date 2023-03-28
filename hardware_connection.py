@@ -12,5 +12,4 @@ def on_request():
     response = is_registered(rf_id=rf_id)
     if response:
         insert_data(rf_id=rf_id)
-    print(app.secret_key)
     return response
