@@ -1,8 +1,9 @@
 from flask import Flask, request
 from controllers.hw_controllers import is_registered, insert_data
+from config import WSGI2_KEY
 
 app = Flask(__name__)
-app.secret_key = "34565465465465"
+app.secret_key = WSGI2_KEY
 
 
 @app.route("/")
@@ -11,4 +12,5 @@ def on_request():
     response = is_registered(rf_id=rf_id)
     if response:
         insert_data(rf_id=rf_id)
+    print(app.secret_key)
     return response

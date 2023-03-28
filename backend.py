@@ -3,10 +3,10 @@ from flask_login import LoginManager
 from views.admin_login import AdminLogin
 from views.admin_view import admin
 from views.views import views
+from config import WSGI1_KEY
 
 app = Flask(__name__)
-# TODO: replace key into env, create .env file (for Yuri)
-app.secret_key = "23123145435667"
+app.secret_key = WSGI1_KEY
 app.register_blueprint(views)
 app.register_blueprint(admin)
 login_manager = LoginManager(app)

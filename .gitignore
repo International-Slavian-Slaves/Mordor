@@ -11,3 +11,4 @@ models/SQLite.sqbpro
 # Ignore virtual environment
 venv/
 myenv/
+mordor-env
