@@ -12,7 +12,6 @@ admin = Blueprint('admin', __name__, template_folder='..templates')
 def login_admin():
     if request.method == "POST":
         user = check_admin(request.form['rf_id'])
-        print(user)
         if user and user[0] == "11:11:11:11":
             userlogin = AdminLogin().create(user)
             login_user(userlogin)

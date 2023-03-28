@@ -1,7 +1,4 @@
 import sqlalchemy as db
-from sqlalchemy.orm import declarative_base
-
-Base = declarative_base()
 
 engine = db.create_engine("sqlite:///SQLite.db")
 connection = engine.connect()
@@ -20,6 +17,3 @@ passes = db.Table('passes', metadata,
                   db.Column('Pass_Date', db.TEXT),
                   db.Column('Pass_Dir', db.TEXT),
                   )
-
-# metadata.create_all(engine)
-# connection.close()
