@@ -2,6 +2,9 @@ from datetime import datetime, timedelta
 
 
 def create_stack(query_array):
+    """
+    func creating stack for counting month hours
+    """
     datetime_stack = []
     for tuple in query_array:
         pass_datetime = datetime.strptime(tuple[2], "%Y-%m-%d %H:%M:%S")
@@ -13,6 +16,9 @@ def create_stack(query_array):
 
 
 def count_month_time(datetime_stack):
+    """
+    func counting month hours with the help of the stack
+    """
     sum = 0
     current = None
     while datetime_stack:

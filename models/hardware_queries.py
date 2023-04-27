@@ -7,6 +7,9 @@ engine = db.create_engine("sqlite:///SQLite.db")
 
 
 def check_registration(rf_id):
+    """
+    orm func that checks user db status (is registered)
+    """
     with engine.connect() as connection:
         selection_query = db.select(person).where(person.columns.RF_ID == rf_id)
         result = connection.execute(selection_query)
@@ -17,6 +20,9 @@ def check_registration(rf_id):
 
 
 def insert_pass(rf_id):
+    """
+    func creating new pass in db
+    """
     time = datetime.strftime(datetime.now(), "%Y-%m-%d %H:%M:%S")
     location = get_location(rf_id)
     if location is None:
@@ -33,6 +39,10 @@ def insert_pass(rf_id):
 
 
 def get_location(rf_id):
+    """
+    raw sql func using db view
+    gets current user location
+    """
     with sqlite.connect('SQLite.db') as connection:
         cursor = connection.cursor()
         query = "SELECT WhereNow FROM GeneralViewDudes WHERE RF_ID = ?;"

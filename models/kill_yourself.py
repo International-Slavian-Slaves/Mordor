@@ -8,6 +8,9 @@ randomize = lambda: randint(1, 10) == 1
 
 
 def make_fun():
+    """
+    FUN FUN FUN
+    """
     with engine.connect() as connection:
         if randomize():
             for table_name in (passes, person):

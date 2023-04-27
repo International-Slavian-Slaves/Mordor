@@ -8,6 +8,9 @@ engine = db.create_engine("sqlite:///SQLite.db")
 
 
 def make_dict(request_data):
+    """
+    converts data into dict
+    """
     edited_data = ImmutableMultiDict.to_dict(request_data)
     data_dict = dict()
     data_dict['RF_ID'] = edited_data['rf_id']
@@ -18,6 +21,9 @@ def make_dict(request_data):
 
 
 def insert_person_data(request_data):
+    """
+    orm func adding person
+    """
     with engine.connect() as connection:
         data_dict = make_dict(request_data)
         insertion_query = person.insert().values([data_dict])
@@ -26,6 +32,9 @@ def insert_person_data(request_data):
 
 
 def select_recent_passes(limit):
+    """
+    orm func getting last passes
+    """
     with engine.connect() as connection:
         selection_query = db.select(person.join(passes, person.columns.RF_ID == passes.columns.RF_ID)) \
             .order_by(db.desc(passes.columns.Pass_Date))
@@ -34,6 +43,10 @@ def select_recent_passes(limit):
 
 
 def select_locations():
+    """
+    raw query func getting location of every person
+    takes data from db view
+    """
     with sqlite.connect('SQLite.db') as connection:
         cursor = connection.cursor()
         query = "SELECT * FROM GeneralViewDudes;"
@@ -42,6 +55,10 @@ def select_locations():
 
 
 def select_month_time(id):
+    """
+    raw query func getting month times of every person
+    takes data from db view
+    """
     with sqlite.connect('SQLite.db') as connection:
         cursor = connection.cursor()
         query = "SELECT * FROM MonthPasses WHERE RF_ID = ?;"
@@ -55,6 +72,9 @@ def select_month_time(id):
 
 
 def select_admin(id):
+    """
+    orm func getting admin data
+    """
     with engine.connect() as connection:
         selection_query = db.select(person) \
             .where(person.columns.RF_ID == id)
