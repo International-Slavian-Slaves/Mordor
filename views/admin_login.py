@@ -2,6 +2,9 @@ from models.db_queries import select_admin
 
 
 class AdminLogin():
+    """
+    flask login class
+    """
     def get_data(self, user_id):
         self.__user = select_admin(user_id)
         return self

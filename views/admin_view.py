@@ -10,6 +10,9 @@ admin = Blueprint('admin', __name__, template_folder='..templates')
 
 @admin.route("/login", methods=['GET', 'POST'])
 def login_admin():
+    """
+    func for login as admin with the help of a post form
+    """
     if request.method == "POST":
         user = check_admin(request.form['rf_id'])
         if user and user[0] == "11:11:11:11":
@@ -25,6 +28,9 @@ def login_admin():
 @admin.route("/hours", methods=['GET', 'POST'])
 @login_required
 def get_month_time():
+    """
+    view for /hours route, returns month hours html
+    """
     response = ""
     if request.method == 'POST':
         dict = request.form.to_dict()

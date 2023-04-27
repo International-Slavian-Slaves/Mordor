@@ -8,6 +8,9 @@ app.secret_key = WSGI2_KEY
 
 @app.route("/")
 def on_request():
+    """
+    view for hardware connection
+    """
     rf_id = request.args.get("rfid")
     response = is_registered(rf_id=rf_id)
     if response:

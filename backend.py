@@ -19,9 +19,15 @@ def load_user(user_id):
 
 @app.errorhandler(404)
 def handle404(error):
+    """
+    error 404 handler
+    """
     return render_template("not_found.html")
 
 
 @app.errorhandler(401)
 def handle401(error):
+    """
+    error 401 handler
+    """
     return render_template("unauthorized.html")
