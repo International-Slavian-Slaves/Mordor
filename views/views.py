@@ -1,12 +1,15 @@
 from flask import Blueprint, render_template, request
+from flask_login import login_required
 from views.forms import RegistrationForm, LimitForm
 from controllers.controllers import register_user, get_recent_passes, get_fun, get_locations
 
 views = Blueprint('views', __name__, template_folder='..templates')
 
 
+
 @views.route("/", methods=['GET', 'POST'])
 @views.route("/index", methods=['GET', 'POST'])
+@login_required
 def index():
     limit = 10
     if request.method == 'POST':
@@ -16,6 +19,7 @@ def index():
 
 
 @views.route("/registration", methods=['GET', 'POST'])
+@login_required
 def registration():
     if request.method == 'POST':
         request_data = request.form
@@ -24,12 +28,14 @@ def registration():
 
 
 @views.route("/fun")
+@login_required
 def kill_yourself():
     msg, result = get_fun()
     return render_template("easter_result.html", msg=msg, result=result)
 
 
 @views.route("/locations")
+@login_required
 def locate_users():
     location_data = get_locations()
     return render_template("locations.html", location_data=location_data)
